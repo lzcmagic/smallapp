@@ -1,0 +1,10 @@
+<!--pages/databind/databind.wxml-->
+<text>pages/databind/databind.wxml</text>
+<view >{{text}}</view>
+<button bindtap='changeText'>changeNormalData</button>
+<view>{{array[1].text}}</view>
+<button bindtap='changeItemInArray'>changeItemInArray</button>
+<view>{{object.text}}</view>
+<button bindtap='changeItemInObject'>changeItemInObject</button>
+<view>{{newField.text}}</view>
+<button bindtap='addNewField'>addNewField</button>

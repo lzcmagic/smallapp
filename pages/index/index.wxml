@@ -1,0 +1,24 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+
+
+
+  </view>
+
+
+  <view id='tabTest' data-hi='MINA' bindtap='tapName'>Click Me</view>
+  <view id='tapDemo' bindtap='bindViewDemo'>Demo页</view>
+  <view id='tapDataBind' bindtap='bindViewDataBind'>bindViewDataBind </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+  <navigator url="../test/test">
+    <text class="txt">test</text>
+  </navigator>
+</view>
