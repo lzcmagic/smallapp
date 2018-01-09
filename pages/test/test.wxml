@@ -1,23 +1,42 @@
-<view class="section">
-  <view class="section__title">vertical scroll</view>
-  <scroll-view scroll-y style="height: 200px;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
-    <view id="green" class="scroll-view-item bc_green"></view>
-    <view id="red"  class="scroll-view-item bc_red"></view>
-    <view id="yellow" class="scroll-view-item bc_yellow"></view>
-    <view id="blue" class="scroll-view-item bc_blue"></view>
-  </scroll-view>
+<!--test.wxml  -->
+<view >
 
-  <view class="btn-area">
-    <button size="mini" bindtap="tap">click me to scroll into view </button>
-    <button size="mini" bindtap="tapMove">click me to scroll</button>
+<view id="outer" bind:tap="handleTap1">
+  outer view
+  <view id="middle" catchtap="handleTap2">
+    middle view
+    <view id="inner" bindtap="handleTap3">
+      inner view
+    </view>
   </view>
 </view>
-<view class="section section_gap">
-  <view class="section__title">horizontal scroll</view>
-  <scroll-view class="scroll-view_H" scroll-x style="width: 100%">
-    <view id="green" class="scroll-view-item_H bc_green"></view>
-    <view id="red"  class="scroll-view-item_H bc_red"></view>
-    <view id="yellow" class="scroll-view-item_H bc_yellow"></view>
-    <view id="blue" class="scroll-view-item_H bc_blue"></view>
-  </scroll-view>
+
+ <view wx:for="{{array}}" wx:for-index="idx" wx:for-item="itemName" wx:key="unique">
+  {{idx}}:{{itemName.message}}
+</view>
+
+<view wx:for="{{[1, 2, 3, 4, 5, 6, 7, 8, 9]}}" wx:for-item="i" wx:key="unique">
+  <view wx:for="{{[1, 2, 3, 4, 5, 6, 7, 8, 9]}}" wx:for-item="j" wx:key="unique">
+    <view wx:if="{{i <= j}}" >
+      {{i}} * {{j}} = {{i * j}}
+    </view>
+  </view>
+</view>
+
+
+<view wx: if="{{view1=='webview'}}">webview</view>
+<view wx: elif="{{view1=='app'}}">app</view>
+<view wx: else="{{view1=='mina'}}">mina</view> 
+
+<template name="staffName">
+  <view>
+    FirstName :{{firstName}},LastName:{{lastName}}
+  </view>
+</template>
+
+<template is="staffName" data="{{...staffA}}"></template>
+<template is="staffName" data="{{...staffB}}"></template>
+<template is="staffName" data="{{...staffC}}"></template>
+
+<view bindtap='count'>{{count}} </view>
 </view>

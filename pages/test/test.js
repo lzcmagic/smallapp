@@ -2,8 +2,29 @@ var order = ['red', 'yellow', 'blue', 'green', 'red']
 Page({
   data: {
     toView: 'red',
-    scrollTop: 100
+    scrollTop: 100,
+    array: [{
+      message: 'foo',
+    }, {
+      message: 'bar'
+    }],
+    view1:'app',
+    staffA:{firstName:'aa',lastName:'aaa'},
+    staffB:{firstName:'bb',lastName:'bbb'},
+    staffC:{firstName:'cc',lastName:'ccc'},
+    count:1
   },
+
+  handleTap1:function(){console.log('handleTap1')},
+  handleTap2: function () { console.log('handleTap2')},
+  handleTap3: function () { console.log('handleTap3')},
+
+  count:function(){
+    this.setData({
+      count:this.data.count+1
+    })
+  },
+
   upper: function (e) {
     console.log(e)
   },

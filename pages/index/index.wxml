@@ -18,7 +18,7 @@
   <view class="usermotto">
     <text class="user-motto">{{motto}}</text>
   </view>
-  <navigator url="../test/test">
+  <navigator url="../logs/logs">
     <text class="txt">test</text>
   </navigator>
 </view>
