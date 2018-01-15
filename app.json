@@ -1,9 +1,9 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/logs/logs",
-    "pages/test/test",
     "pages/demo/demo",
+    "pages/viewdemo/viewdemo",
+    "pages/logs/logs",
     "pages/databind/databind"
   ],
   "window": {
@@ -11,31 +11,11 @@
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "black",
-    "enablePullDownRefresh": "true"
-  },
-  "tabBar": {
-    "color": "#FFFFFF",
-    "selectedColor": "#FF0000",
-    "borderStyle": "black",
-    "backgroundColor": "#00ff00",
-    "list": [
-      {
-        "pagePath": "pages/index/index",
-        "text": "text",
-        "iconPath": "images/1.jpg",
-        "selectedIconPath": "images/2.jpg"
-      },
-      {
-        "pagePath": "pages/test/test",
-        "text": "text",
-        "iconPath": "images/1.jpg",
-        "selectedIconPath": "images/2.jpg"
-      }
-    ]
+    "enablePullDownRefresh": "false"
   },
   "networkTimeout": {
-    "request": 20000,
-    "connectSocket": 20000,
+    "request": 10000,
+    "connectSocket": 10000,
     "uploadFile": 20000,
     "downloadFile": 20000
   },

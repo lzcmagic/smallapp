@@ -1,24 +1,30 @@
-<!--index.wxml-->
-<view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
+<view class='container0' style="width:{{windowWidth}};height:{{windowHeight}}">
+  <text class='title'>{{addr}}
+  </text>
 
+  <view class='container1'>
 
+    <image src="../../images/temp_number/notif_temp_{{actualWeather}}.png" style="width:150rpx;height:150rpx;float:left;margin-left:10rpx"></image>
+
+    <view class='container2'>
+      <view class='title_text'>{{weather}}</view>
+      <view class='title_text'>体感：{{realWeather}}</view>
+    </view>
+
+    <image src="{{weatherUrlImg}}" class='weatherImg'></image>
 
   </view>
 
-
-  <view id='tabTest' data-hi='MINA' bindtap='tapName'>Click Me</view>
-  <view id='tapDemo' bindtap='bindViewDemo'>Demo页</view>
-  <view id='tapDataBind' bindtap='bindViewDataBind'>bindViewDataBind </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+  <view class='container3'>
+    <view class='date'>
+      <image src='../../images/update_date.png' style="width:24px;height:24px;"></image>
+      <text decode='true' id='update_text'>&nbsp;&nbsp;&nbsp;{{update_time}}</text>
+    </view>
+    <canvas canvas-id="canvas1" class="myCanvas" style="width:96%;height:{{chartHeight}}px;" />
   </view>
-  <navigator url="../logs/logs">
-    <text class="txt">test</text>
-  </navigator>
+
+<view id='bottom_reference'>
+<image src="../../images/hefeng_reference_logo.png" style="width:95px; height:13px;float:right;margin:12px;" ></image>
+</view>
+  
 </view>

@@ -35,5 +35,12 @@ App({
   },
   globalData: {
     userInfo: null
+  },
+  weatherInfo:{
+    weatherKey: '4pijob8pbue0mmwz',
+    weatherId:'U321D671D2'
+  },
+  weatherInfo1:{
+    weatherKey:'6d34cd9112ef4c6b97484dc30c7bb2df'
   }
 })

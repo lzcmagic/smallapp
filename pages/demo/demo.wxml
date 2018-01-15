@@ -1,40 +1,8 @@
-<!--pages/demo/demo.wxml-->
 
-<view >hello {{name}} </view>
-<button bindtap='changeName'> changeName</button>
-<form bindsubmit='formSubmit' bindreset='formReset'>
-  <view class='section section_gap'>
-    <view class='section__title'>switch</view>
-    <switch name="switch"/>
-  </view>
-  <view class='section section_gap'>
-    <view class='section__title'>Slider</view>
-    <slider name="slider" show-value='90'></slider>
-  </view>
-  <view class='section'>
-    <view class='section__title'>input</view>
-    <input name="input" placeholder='please input here'></input>
-  </view>
 
-  <view class='section section_gap'>
-    <view class='sction__title'>radio</view>
-    <radio-group name="radio-group">
-      <label><radio value='radio1'/>radio1</label>
-      <label><radio value='radio2'/>radio2</label>
-    </radio-group>
-  </view>
+<canvas 
+canvas-id="canvas1" 
+class="myCanvas" 
+style="width:{{chartWidth}}px;height:{{chartHeight}}px;"/>
+<button class="downloadChart" bindtap="onSaveClick">保存图片</button>
 
-  <view class='section section_gap'>
-    <view class='section__title'>checkbox</view>
-    <checkbox-group name="checkbox">
-      <label><checkbox value='checkbox1'/>checkbox1</label>
-      <label><checkbox value='checkbox2'/>checkbox2</label>
-    </checkbox-group>
-  </view>
-
-  <view class='btn_area'>
-    <button form-type='submit'>Submit</button>
-    <button form-type='reset'>Reset</button>
-    <button bindtap='bindTapLogs'>bindTapLogs</button>
-  </view>
-</form>

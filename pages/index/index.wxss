@@ -1,21 +1,75 @@
 /**index.wxss**/
-.userinfo {
+
+.title {
+  font-size: 60rpx;
+  color: white;
+  margin-left: 24rpx;
+  font-weight: 600;
+  float: left;
+  position: relative;
+  margin-top: 20rpx;
+}
+
+.title_text {
+  font-size: 34rpx;
+  color: white;
+}
+
+.container0 {
+  background: rgb(253,185,74);
   display: flex;
   flex-direction: column;
+}
+
+.container1 {
+  width: 100%;
+  height: 136rpx;
+  float: left;
+}
+
+.container2 {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  top: 26rpx;
+  position: relative;
+  margin-left: 10rpx;
+  float: left;
+}
+
+.container3 {
+  border: 2rpx solid #EFDBB7;
+  background-color: white;
+  width: 92%;
+  margin: auto;
+  margin-top: 12px;
+  position: relative;
+}
+
+.weatherImg{
+  width: 56px;
+  height: 56px;
+  float: right;
+  position: relative;
+  top: 0px;
+  color: white;
+}
+
+.date{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
   align-items: center;
+  margin-top: 12px;
+  margin-left: 12px;
 }
 
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+#update_text{
+  color: #757575;
+  font-size: 14px;
 }
 
-.userinfo-nickname {
-  color: #aaa;
+#bottom_reference{
+  width: 100%;
 }
 
-.usermotto {
-  margin-top: 200px;
-}
