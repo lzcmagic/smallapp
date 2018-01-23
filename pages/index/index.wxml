@@ -15,16 +15,30 @@
 
   </view>
 
+<!-- <view class="container4">
+  <scroll-view class="scroll-view_H" scroll-x >
+    <view id="green" class="scroll-view-item_H bc_green">1</view>
+    <view id="green"  class="scroll-view-item_H bc_red">2</view>
+    <view id="green" class="scroll-view-item_H bc_yellow">3</view>
+    <view id="green" class="scroll-view-item_H bc_blue">4</view>
+  </scroll-view>
+</view> -->
+ 
+
+
   <view class='container3'>
     <view class='date'>
       <image src='../../images/update_date.png' style="width:24px;height:24px;"></image>
       <text decode='true' id='update_text'>&nbsp;&nbsp;&nbsp;{{update_time}}</text>
     </view>
+
+    
+
     <canvas canvas-id="canvas1" class="myCanvas" style="width:96%;height:{{chartHeight}}px;" />
   </view>
 
-<view id='bottom_reference'>
-<image src="../../images/hefeng_reference_logo.png" style="width:95px; height:13px;float:right;margin:12px;" ></image>
-</view>
-  
+  <view id='bottom_reference'>
+    <image src="../../images/hefeng_reference_logo.png" style="width:95px; height:13px;float:right;margin:12px;"></image>
+  </view>
+
 </view>

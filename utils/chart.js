@@ -45,7 +45,11 @@ var dataSet = {
   xAxis: {
     color: "#666A73",
     size: 10,
-    data: []
+    data: [],
+    weatherD:[],//早上温度图标
+    weatherN:[],//晚上温度图标
+    weatherDD:[],//早上温度描述
+    weatherND:[],//晚上温度描述
   },
   series: [
     {
@@ -83,8 +87,8 @@ function initCanvas(page, canvasId) {
   chartOpt.legendHeight = dataSet.legend.size * 0.8;
 
   chartOpt.top = chartOpt.left = chartOpt.chartSpace;
-  chartOpt.right = chartOpt.chartWidth - chartOpt.chartSpace;
-  chartOpt.bottom = chartOpt.chartHeight - chartOpt.chartSpace;
+  chartOpt.right = chartOpt.chartWidth - chartOpt.chartSpace-20;
+  chartOpt.bottom = chartOpt.chartHeight - chartOpt.chartSpace-16;
 
   //3个数字的文字长度
   var textWidth = util.mesureText('100', dataSet.xAxis.size);
@@ -120,6 +124,10 @@ function checkData(data) {
     dataSet.color = data.color;
   }
   dataSet.xAxis.data = data.xAxis.data;
+  dataSet.xAxis.weatherD = data.xAxis.weatherD;
+  dataSet.xAxis.weatherN = data.xAxis.weatherN;
+  dataSet.xAxis.weatherDD = data.xAxis.weatherDD;
+  dataSet.xAxis.weatherND = data.xAxis.weatherND;
 
 
   dataSet.series = data.series;
@@ -206,6 +214,9 @@ function drawXaxis(ctx) {
 
   var width = (chartOpt.right - chartOpt.axisLeft) / chartOpt.barLength;
   var data = dataSet.xAxis.data;
+
+  var textDD = dataSet.xAxis.weatherDD;
+  var textND = dataSet.xAxis.weatherND;
   //绘制X轴显示文字
   for (var i = 0; i < data.length; i++) {
     var textX = (width * (i + 1)) - (width / 2) + chartOpt.axisLeft;
@@ -213,6 +224,13 @@ function drawXaxis(ctx) {
     ctx.setFontSize(dataSet.xAxis.size);
     ctx.setTextAlign('center');
     ctx.fillText(data[i], textX, chartOpt.axisBottom + dataSet.xAxis.size + chartOpt.textSpace);
+    var finalText;
+    if (textDD[i] == textND[i]){
+      finalText=textDD[i];
+    }else{
+      finalText = textDD[i] + "转" + textND[i]
+    }
+    ctx.fillText(finalText, textX, chartOpt.axisBottom + dataSet.xAxis.size+14 + chartOpt.textSpace);
   }
 }
 /**
@@ -277,7 +295,7 @@ function drawLegend(ctx) {
       ctx.setFillStyle(dataSet.xAxis.color);
       ctx.setFontSize(dataSet.legend.size)
       ctx.setTextAlign('left');
-      ctx.fillText(series[i].name, x + chartOpt.chartSpace + chartOpt.legendWidth, chartOpt.bottom);
+      ctx.fillText(series[i].name, x + chartOpt.chartSpace + chartOpt.legendWidth, chartOpt.bottom+12);
 
       var color = getColor(i);
       ctx.setFillStyle(color);
@@ -287,7 +305,7 @@ function drawLegend(ctx) {
         ctx.fillRect(x, y + 1, chartOpt.legendWidth, chartOpt.legendHeight);
       } else if (series[i].category == 'line') {
         var lx = x + chartOpt.legendWidth / 2;
-        var ly = y + chartOpt.legendHeight / 2 + 1;
+        var ly = y + chartOpt.legendHeight / 2 + 13;
         ctx.beginPath();
         ctx.moveTo(x, ly);
         ctx.lineTo(x + chartOpt.legendWidth, ly);

@@ -2,16 +2,15 @@
   "pages": [
     "pages/index/index",
     "pages/demo/demo",
-    "pages/viewdemo/viewdemo",
-    "pages/logs/logs",
-    "pages/databind/databind"
+    "pages/logs/logs"
   ],
   "window": {
-    "backgroundTextStyle": "dark",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "black",
-    "enablePullDownRefresh": "false"
+    "backgroundTextStyle": "white",
+    "navigationBarBackgroundColor": "#FDB94A",
+    "navigationBarTitleText": "天气速查",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh":false,
+    "backgroundColor": "#FDB94A"
   },
   "networkTimeout": {
     "request": 10000,

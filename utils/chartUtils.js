@@ -44,7 +44,7 @@ function calculateY(dMin, dMax, iMaxAxisNum) {
 
   var iExp = parseInt(Math.log(dDelta) / Math.log(10.0)) - 2;
   var dMultiplier = Math.pow(10, iExp);
-  var dSolutions = [1, 2, 2.5, 5, 10, 20, 25, 50, 100, 200, 250, 500];
+  var dSolutions = [-100,-50,-25,-20,10,-5,-2.5,-2,-1,1, 2, 2.5, 5, 10, 20, 25, 50, 100];
   var i;
   for (i = 0; i < dSolutions.length; i++) {
     var dMultiCal = dMultiplier * dSolutions[i];
@@ -60,7 +60,7 @@ function calculateY(dMin, dMax, iMaxAxisNum) {
   var iAxisIndex;
   for (iAxisIndex = 1; true; iAxisIndex++) {
     var y = dStartPoint + dInterval * iAxisIndex;
-    console.log(y);
+    // console.log(y);
     yIndex.push(y);
     if (y > dMax)
       break;
